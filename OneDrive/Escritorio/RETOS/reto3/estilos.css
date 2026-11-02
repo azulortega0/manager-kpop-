@@ -1,0 +1,13 @@
+body{
+    font-family:sans-serif;
+    background-color: rgb(224, 175, 120); 
+}
+
+li{
+    color: rgb(110, 71, 71);
+}
+
+
+a{
+    color: rgb(0, 0, 0);
+}

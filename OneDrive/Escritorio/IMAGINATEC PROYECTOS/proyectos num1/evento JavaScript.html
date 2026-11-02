@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color: rgb(155, 207, 236); /* Color de fondo */
+            font-family: Arial, sans-serif; /* Tipo de letra */
+            text-align: center; /* Alineación del texto */
+        }
+        button{
+            color: blue;
+        }
+    </style>
+    <title>Ejemplo de Boton</title>
+</head>
+<body>
+
+<button id="miBoton">Clic aquí</button>
+
+<script>
+
+    // Seleccionamos el botón
+    const boton = document.getElementById('miBoton');
+
+    // Agregamos un evento de clic
+    boton.addEventListener('click', function() {
+        alert('¡Has hecho clic en el botón!');
+    });
+</script>
+
+</body>
+</html>

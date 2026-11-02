@@ -1,0 +1,43 @@
+var penpotFlags = "enable-email-blacklist enable-audit-log enable-audit-log-archive enable-audit-log-gc enable-user-feedback enable-smtp disable-log-emails disable-backend-asserts disable-demo-users disable-telemetry disable-auto-file-snapshot enable-terms-and-privacy-checkbox enable-login-with-google enable-login-with-github enable-login-with-gitlab enable-newsletter-subscription enable-quotes enable-soft-quotes enable-webhooks enable-urepl-server enable-prepl-server enable-access-tokens enable-exporter-svgo enable-frontend-svgo enable-rpc-climit enable-file-validation enable-soft-file-schema-validation enable-feature-components-v2 enable-feature-styles-v2 enable-feature-grid-layout";
+
+var penpotTermsOfServiceURI = "https://penpot.app/terms";
+var penpotPrivacyPolicyURI = "https://penpot.app/privacy";
+
+function getFeatureFlagFromLocalStorage(flag, value) {
+  if (!localStorage.hasOwnProperty(flag)) {
+    localStorage.setItem(flag, (Math.random() >= 0.5) ? value : "control");
+  }
+  return localStorage.getItem(flag);
+}
+
+var forcedExternalFeatureKeys = [];
+var forcedExternalFeatureFlags = forcedExternalFeatureKeys.reduce((o, key) => ({ ...o, [key]: getFeatureFlagFromLocalStorage(key, 'test')}), {});
+
+function externalFeatureFlag(flag, value) {
+  if (forcedExternalFeatureFlags[flag] !== undefined) {
+    return forcedExternalFeatureFlags[flag] == value;
+  }
+  else if (window.posthog) {
+    return window.posthog.getFeatureFlag(flag) == value; 
+  }
+}
+
+function externalSessionId() {
+  if (window.posthog && window.posthog.get_session_id) {
+    return window.posthog.get_session_id();
+  }
+}
+
+
+
+var _paq = window._paq || [];
+_paq.push(["setDoNotTrack", true]);
+_paq.push(["disableCookies"]);
+_paq.push(['trackPageView']);
+(function() {
+  var u="https://matomo.kaleidos.net/";
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
+  _paq.push(['setSiteId', '6']);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+})();

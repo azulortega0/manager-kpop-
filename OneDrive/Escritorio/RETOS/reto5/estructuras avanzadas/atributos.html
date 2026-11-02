@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atributos.html</title>
+    <link rel="stylesheet" href="atributos.css">
+</head>
+<body>
+    <header>
+        <center><h1><marquee>Atributos en HTML</marquee></h1></center>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <br>
+                <li><a href="listas.html">Listas</a></li>
+                <br>
+                <li><a href="tablas.html">Tablas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <h2>ATRIBUTOS ID / CLASS</h2>
+        <h4>ATRUBUTOS ID</h4>
+        <p>El atributo "ID" se utiliza para identificar un elemento específico. Debe ser único dentro de la página,
+            lo que significa que solo un elemento puede tener el mismo id. Esto es útil cuando necesitas aplicar estilos o manipular ese elemento
+            con JavaScript. Por ejemplo, si tienes un div con id="miElemento", puedes referenciarlo en CSS o JavaScript de manera directa.</p>
+        <p>Es importante recordar que, debido a su unicidad, no debes repetir el mismo id en otros elementos de la misma página. 
+            Esto garantiza que las selecciones y manipulaciones sean precisas y no generen confusiones.</p>
+        <br>
+        <h5>RESUMEN.</h5>
+        <p>- El atributo id se utiliza para asignar un identificador único a un elemento.</p>
+        <p>- Solo debe haber un elemento con un mismo id en una página.</p>
+        <p>- Cada id debe ser único en una página.</p>
+
+        <h3>Ejemplo De Uso:</h3>
+
+        <pre>
+            <div id="header">Este es el encabezado</div>
+            <P>Codigo: < div id = "header"> Este es el encabezado< /div>
+        </pre>
+
+        <h4>ATRIBUTO CLASS.</h4>
+        <p>El atributo "Class" se utiliza para agrupar varios elementos que comparten el mismo estilo. 
+            A diferencia del id, un class puede ser utilizado por múltiples elementos, y un elemento puede tener varias clases. 
+            Esto es muy útil para aplicar estilos de manera consistente a varios elementos sin necesidad de hacer un id único para cada uno.</p>
+        <p>Es fundamental para la organización y el diseño de páginas web. 
+            Al asignar una clase a un elemento, puedes aplicar estilos de manera uniforme a varios elementos sin necesidad de crear un id único para cada uno. 
+            Esto no solo ahorra tiempo, sino que también facilita el mantenimiento del código.</p>
+        <br>
+        <h5>RESUMEN.</h5>
+        <P>- El atributo class se utiliza para agrupar varios elementos que comparten estilos.</P>
+        <P>- Puedes asignar la misma class a múltiples elementos.</P>
+        <p>- Se puede asignar múltiples clases a un elemento, separándolas con espacios.</p>
+        
+        <h3>Ejemplo De Uso:</h3>
+
+        <pre>
+            <p class="texto-importante">Primer párrafo importante.</p>
+            <p class="texto-importante">Segundo párrafo importante.</p>
+
+        </pre>
+    </main>
+</body>
+</html>

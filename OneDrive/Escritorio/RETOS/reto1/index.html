@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de URL</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+</head>
+<body>
+    <center>
+    <marquee><h1>Verificador URL <br> Ortega Romero</h1></marquee>
+    <input type="text" id="urlInput" placeholder="Introduce la URL aquí" />
+    <button onclick="verificarURL()">Verificar</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function verificarURL() {
+            const url = document.getElementById('urlInput').value;
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = '';
+
+            try {
+                const urlObj = new URL(url);
+                resultadoDiv.innerHTML = `La URL es válida!:`;
+                window.open(urlObj.href, '_blank');
+            } catch (error) {
+                resultadoDiv.innerHTML = 'Error: La URL no es válida. Asegúrate de que la URL exista.';
+            }
+        }
+    </script>
+    </center>
+    <script src="scrpt.js"></script>
+</body>
+</html>
